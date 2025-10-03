@@ -1,6 +1,4 @@
 
-### 📄 README.md
-
 ````markdown
 # 🧠 AI Resume Analyzer & Smart Interview Bot  
 
