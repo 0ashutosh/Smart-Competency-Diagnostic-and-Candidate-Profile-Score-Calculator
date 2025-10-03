@@ -1,125 +1,140 @@
-
-````markdown
 # 🧠 AI Resume Analyzer & Smart Interview Bot  
 
-This is a **capstone project** built using **Streamlit, NLP, and Machine Learning**.  
-It helps job seekers analyze their resumes, get skill/course recommendations, calculate resume scores, and practice interviews with an **AI Interview Bot**.  
+A **Final Year Capstone Project** built using **Streamlit, NLP, and Machine Learning**.  
+This tool helps job seekers analyze their resumes, get skill & course recommendations, calculate resume scores, and practice interviews with an **AI-powered Interview Bot**.  
 
 ---
 
-## 🚀 Features
-- 📑 **Resume Analyzer**  
-  - Upload a PDF resume  
-  - Extracts details (skills, education, experience)  
-  - Predicts domain (Data Science, Web Dev, Android, iOS, UI/UX)  
-  - Suggests recommended skills & courses  
-  - Provides resume score and improvement tips  
+## 🚀 Features  
 
-- 🎥 **Learning Resources**  
-  - Personalized courses  
-  - Resume writing tips video  
-  - Interview preparation video  
+### 📑 Resume Analyzer
+- Upload a **PDF Resume**  
+- Extracts details (Skills, Education, Experience, Degree, etc.)  
+- Predicts career domain:
+  - Data Science  
+  - Web Development  
+  - Android Development  
+  - iOS Development  
+  - UI/UX Design  
+- Suggests **recommended skills & courses**  
+- Provides a **resume score** with improvement tips  
 
-- 🗣️ **AI Interview Bot**  
-  - Domain-specific interview questions  
-  - Evaluates answers using:
-    - **Semantic similarity** (sentence embeddings)  
-    - **Keyword coverage** (important terms)  
-    - **Answer length penalty check**  
-  - Gives a **final interview score + feedback**  
-  - Stores results in MySQL for analytics  
+### 🎥 Learning Resources
+- Personalized course recommendations  
+- Resume writing tips video  
+- Interview preparation video  
 
-- 🛠️ **Admin Dashboard**  
-  - View all users & their resume analysis  
-  - View feedback data  
-  - Pie-chart analytics (domains, scores, experience level, locations, etc.)  
+### 🗣️ AI Interview Bot
+- Domain-specific interview questions  
+- Evaluates answers using:
+  - **Semantic similarity** (Sentence Embeddings)  
+  - **Keyword coverage** (Important concepts)  
+  - **Answer length check (penalty for too short answers)**  
+- Gives:
+  - Final Interview Score (0–100)  
+  - Detailed Feedback (missing terms, suggestions)  
+- Stores results in **MySQL Database** for analytics  
 
-- 💬 **Feedback System**  
-  - Collects user ratings and comments  
-  - Displays past feedback with analytics  
+### 🛠️ Admin Dashboard
+- Secure Admin Login  
+- View all **user resume analysis results**  
+- View & download feedback data  
+- Pie-chart analytics:
+  - Domains distribution  
+  - Resume scores  
+  - User experience levels  
+  - User locations (City/State/Country)  
+
+### 💬 Feedback System
+- Collects **user ratings (1–5) and comments**  
+- Displays **past feedback analytics** with charts  
 
 ---
 
-## 🖥️ Tech Stack
-- **Frontend & App**: Streamlit  
+## 🖥️ Tech Stack  
+
+- **Frontend & App**: [Streamlit](https://streamlit.io/)  
 - **Backend**: Python  
-- **Database**: MySQL (pymysql connector)  
-- **ML/NLP**: NLTK, Sentence Transformers, Pyresparser  
+- **Database**: MySQL (via `pymysql`)  
+- **ML/NLP**:  
+  - NLTK  
+  - Sentence Transformers  
+  - Pyresparser  
 - **Visualization**: Plotly, Streamlit-Tags  
-- **Other**: HuggingFace, Geopy, PDFMiner  
+- **Other Libraries**: HuggingFace, Geopy, PDFMiner, PIL  
 
 ---
 
 ## ⚙️ Installation & Setup  
 
-1. **Clone this repo**  
-   ```bash
-   git clone https://github.com/<your-username>/<repo-name>.git
-   cd <repo-name>
-````
+### 1️⃣ Clone the repository  
+```bash
+git clone https://github.com/0ashutosh/Smart-Competency-Diagnostic-and-Candidate-Profile-Score-Calculator.git
+cd Smart-Competency-Diagnostic-and-Candidate-Profile-Score-Calculator
 
-2. **Create & activate virtual environment**
 
-   ```bash
-   python -m venv venv
-   source venv/bin/activate   # On Linux/Mac
-   venv\Scripts\activate      # On Windows
-   ```
 
-3. **Install dependencies**
+2️⃣ Create Virtual Environment
+```bash
+python -m venv venv
+venv\Scripts\activate   # On Windows
+source venv/bin/activate  # On Linux/Mac
 
-   ```bash
-   pip install -r requirements.txt
-   ```
 
-4. **Setup MySQL Database**
+3️⃣ Install dependencies
+```bash
+pip install -r requirements.txt
 
-   * Create database `cv`
-   * Tables will be auto-created when you run the app
 
-5. **Run the app**
 
-   ```bash
-   streamlit run App.py
-   ```
+4️⃣ Setup Database
+Install MySQL Server
+Create a database named cv
+Update your MySQL username/password inside App.py:
+```bash
+connection = pymysql.connect(host='localhost', user='root', password='yourpassword', db='cv')
 
----
 
-## 📊 Database Schema
 
-* **user_data** → stores user resume details & recommendations
-* **user_feedback** → stores feedback and ratings
-* **interview_logs** → stores interview answers & scores
+5️⃣ Run the App
+```bash
+streamlit run App/App.py
 
----
 
-## 📂 Project Structure
 
-```
-AI-Resume-Analyzer/
-│── App.py                # Main Streamlit app
-│── Courses.py            # Predefined courses & video data
-│── requirements.txt      # Python dependencies
-│── README.md             # Project documentation
-│── Logo/                 # Logo & icons
-│── Uploaded_Resumes/     # User resumes (ignored in Git)
-│── .gitignore            # Ignore venv, cache, logs, etc.
-```
+📊 Example Outputs
+Resume Analyzer
 
----
+✅ Extracted details and recommendations
+✅ Resume score progress bar
 
-## 👨‍💻 Contributors
+AI Interview Bot
 
-* [Ashutosh Agrawal](https://www.linkedin.com/in/ashutosh-agrawal-b3a331244/)
-* [Ashutosh Kumar Sharma](https://www.linkedin.com/in/ashutosh-sharma-062247257/)
-* [Anamaneni Abhilash](https://www.linkedin.com/in/anamaneni-abhilash-969a37379/)
+✅ Domain-wise questions
+✅ Instant scoring + feedback
 
----
+Admin Dashboard
 
-## 📜 License
+✅ View all user analytics
+✅ Pie-chart reports (domain, skills, location, scores)
 
-This project is for **academic and learning purposes**.
 
----
+📂 Project Structure:
+📦 Smart-Competency-Diagnostic-and-Candidate-Profile-Score-Calculator
+ ┣ 📂 App
+ ┃ ┣ 📜 App.py          # Main Streamlit app
+ ┃ ┣ 📜 Courses.py      # Predefined course recommendations
+ ┃ ┣ 📂 Logo            # Logo images
+ ┃ ┣ 📂 Uploaded_Resumes
+ ┣ 📜 requirements.txt  # Python dependencies
+ ┣ 📜 README.md         # Project documentation
+ ┣ 📜 .gitignore        # Ignore venv, cache, etc.
 
-```
+
+
+🧑‍💻 Contributors:
+Ashutosh Agrawal
+Ashutosh Kumar Sharma
+Anamaneni Abhilash
+
+📜 License
