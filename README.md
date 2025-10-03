@@ -100,6 +100,7 @@ source venv/bin/activate  # On Linux/Mac
 
 ### 3️⃣ Install dependencies
 ```bash
+cd App
 pip install -r requirements.txt
 ```
 
