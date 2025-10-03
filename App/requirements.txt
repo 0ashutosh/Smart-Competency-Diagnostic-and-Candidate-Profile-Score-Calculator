@@ -92,5 +92,9 @@ wasabi==0.10.1
 watchdog==2.1.9
 zipp==3.8.1
 sentence-transformers==2.2.2
-torch
-
+torch==2.0.1
+torchvision==0.15.2
+huggingface-hub==0.8.1
+numpy<2.0
+pyarrow<10
+transformers==4.19.2
