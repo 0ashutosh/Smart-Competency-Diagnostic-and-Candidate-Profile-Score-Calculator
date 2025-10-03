@@ -59,6 +59,7 @@ python -m spacy download en_core_web_sm
 
 ## ▶️ Run the App
 ```bash
+cd App
 streamlit run App.py
 ```
 
@@ -114,8 +115,9 @@ Smart-Competency-Diagnostic-and-Candidate-Profile-Score-Calculator/
 
 ## 👨‍💻 Contributors
 - **Ashutosh Agrawal**
+- **Ashutosh Kumar Sharma**
+- **Anamaneni Abhilash**
 
 ---
 
 ## 📜 License
-MIT License
