@@ -29,6 +29,11 @@ nltk.download('stopwords')
 nltk.download('punkt')
 nltk.download('wordnet')
 nltk.download('omw-1.4')
+nltk.download('punkt')
+from sentence_transformers import SentenceTransformer
+from huggingface_hub import snapshot_download
+import os
+
 
 ###### Preprocessing functions ######
 
@@ -809,17 +814,19 @@ def run():
     elif choice == "Interview Bot":
         import re, string
         from collections import Counter
-        from sentence_transformers import SentenceTransformer, util
         from nltk.corpus import stopwords
         from nltk.stem import WordNetLemmatizer
         from nltk import word_tokenize
+        from sentence_transformers import SentenceTransformer, util
+
 
         st.header("🗣️ AI Interview Bot (Semantic + Keyword Coverage)")
 
         # Cache model once
         @st.cache_resource
         def load_model():
-            return SentenceTransformer("all-MiniLM-L6-v2")  # lightweight & fast
+            model_path = snapshot_download("sentence-transformers/all-MiniLM-L6-v2")
+            return SentenceTransformer(model_path)
         model = load_model()
 
         # Cache questions
