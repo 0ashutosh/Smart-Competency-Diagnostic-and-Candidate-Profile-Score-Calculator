@@ -1,0 +1,15 @@
+# Ignore virtual environments
+venv39/
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs and system files
+*.log
+.DS_Store
+Thumbs.db
